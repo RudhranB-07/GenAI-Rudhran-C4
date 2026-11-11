@@ -209,7 +209,7 @@ Q7. Classification with Edge Cases
 Zero-shot prompt
 You are a customer support analyst at a telecom company. Your job is to classify the customer complaint below into one category: Billing, Network, Device or Other. Please find the complaint below,
 [Customer complaint]
-If the complaint mentions more than one issue, pick the one the customer most wants resolved and mention the second issue in one short line. Give the output as Category, Reason and Confidence (low/medium/high), in a neutral tone and under 50 words.
+If the complaint mentions more than one issue,pick the first and most concrete issue and mention the second issue in one short line. Give the output as Category, Reason and Confidence (low/medium/high), in a neutral tone and under 50 words.
 Use only the complaint. Don’t invent details. Use only the four categories given. If the complaint doesn’t clearly fit Billing, Network or Device, choose Other. If it is too unclear to judge, say so in the reason and set the confidence to low.
 
 Few-shot prompt

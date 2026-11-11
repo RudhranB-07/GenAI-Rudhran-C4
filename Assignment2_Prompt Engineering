@@ -1,0 +1,42 @@
+Section 1: Ambiguity + Incomplete Context
+__________________________________________
+Q1. Consulting Case – Messy Client Problem
+
+Prompt - You are a senior business analyst in a telecom company. A telecom client’s ARPU (average revenue per user) has been declining. The client has given us a messy paragraph with unstructured data containing conflicting stakeholder opinions . Your job is to turn it into a structured hypotheses that helps the team to plan the next steps. Please find the client's paragraph below,
+[Client given paragraph]
+The hypotheses should contain the specific facts, analysis and figures mentioned from the input paragraph and who said it, if known and list the missing data needed to test each hypothesis. Provide each hypothesis a confidence level - low/mid/high and specify why.Please maintain a professional tone and proper documentation for this hypotheses. Hypotheses should be under 750 words and use proper formatting like Heading, Sub-heading, bulletin, paragraps and charts if needed.
+Use information only in the paragraph. Don't create any numbers/figures/data that are not in the paragraph. Don't be biased towards a particualar stakeholders' opinion. Don't decide a particular opinion as correct one. If you're not sure or something not present in the paragraph don't assume, just mention that it's not available. Also give a list of actions/suggestions for the hypotheses and data. Do not recommend fixes for ARPU yet.
+
+1. Why this structure?
+
+The prompt follows the six components, and each one does a specific job:
+Role: “Senior business analyst in a telecom company” tells the model to think like an analyst and not like a customer care executive.
+Context: the ARPU decline, the messy paragraph and the conflicting stakeholder opinions explain the situation, so the model knows what it is dealing with.
+Instruction: turn the paragraph into structured hypotheses, list the missing data, and give actions for the hypotheses and data.
+Output format: headings, sub-headings, bullets and a 750-word limit keep the answer organised and short.
+Tone: a professional tone suits a consulting report.
+Guardrails: the rules at the end (use only the paragraph, no invented numbers, no taking sides, no assuming, no fixes yet) control how the model does the task.
+
+2. Why this technique?
+
+This is a zero-shot prompt. It has no examples, because the task is clear and the client’s paragraph will be different each time. An example could make the model copy its content instead of analysing the new paragraph.
+
+3. Failure Modes Prevented
+
+- Bias towards a stakeholder
+- Assuming missing information
+- Creating data such as numbers or figures
+- Overconfidence in the hypotheses
+
+4. Alternative prompt design
+
+You are a telecom business analyst. Read the client paragraph below, which contains conflicting stakeholder opinions and no structured data.
+[Client given paragraph]
+
+Reply in this table format only:
+| Hypothesis | Evidence from paragraph | Who said it | Confidence (Low/Medium/High) | Missing data needed |
+
+After the table, add two short sections: “Contradictions found” (who said what) and “Next steps” (limited to verifying hypotheses and collecting data).
+Use only the paragraph, do not invent figures, write “Not provided” for anything missing, and do not pick a side or recommend fixes for ARPU. Keep the whole answer under 750 words.
+----------------------------------------------------------------------------------------------------------------------------
+Q2. Healthcare Risk Scenario 
